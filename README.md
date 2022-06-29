@@ -1,4 +1,3 @@
-# t
 
 ## Project setup
 ```
