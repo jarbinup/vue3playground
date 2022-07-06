@@ -7,5 +7,5 @@
 - 局部安装依赖
   1. 从根目录切到子项目的目录 直接 pnpm i element-plus
   2. 使用 --filter 参数在根目录直接安装 pnpm i element-plus --filter ssmispc
-- 全局安装加参数 -W  pnpm i moment -W
+- 全局安装加参数 -w  pnpm i moment -w
 - 参考文章 https://juejin.cn/post/7077168840806760478
