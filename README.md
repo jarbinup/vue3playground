@@ -18,3 +18,8 @@ alias: {
   "pages": `${path.resolve(__dirname, 'src/pages')}`
 }
 ``` 
+- vscode 保存文件卡死 
+  https://github.com/microsoft/vscode/issues/93080
+  是否是你同时开启了editor.formatOnSave 和 editor.codeActionsOnSave， 我怀疑如果你只要eslint的话 ，只要开启editor.codeActionsOnSave就可以了。这样就不会去走Vetur的情况
+- vscode 小技巧 批量转换大小写 首字母大写
+  ctrl+shift+P  Lower Upper Title

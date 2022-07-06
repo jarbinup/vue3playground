@@ -7,7 +7,7 @@ const routes = [
   { 
     path: '/form',
     name: 'form',
-    component: () => import(/* webpackChunkName: "form" */ 'pages/form'),
+    component: () => import(/* webpackChunkName: "form" */ 'pages/form/index.vue'),
     meta: {
       title: '表单功能'
     }
