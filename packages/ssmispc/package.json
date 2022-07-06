@@ -1,0 +1,8 @@
+{
+  "name": "ssmispc",
+  "private": true,
+  "version": "1.0.0",
+  "dependencies": {
+    "element-plus": "^2.2.8"
+  }
+}
