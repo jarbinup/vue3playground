@@ -9,3 +9,12 @@
   2. 使用 --filter 参数在根目录直接安装 pnpm i element-plus --filter ssmispc
 - 全局安装加参数 -w  pnpm i moment -w
 - 参考文章 https://juejin.cn/post/7077168840806760478
+- 配置 alias 参数的时候会提示 [ TS，找不到名称“__dirname”。ts(2304)]
+  需要装一下 @types/node 包 
+  pnpm add @types/node --save-dev -w
+```js
+alias: {
+  "@": `${path.resolve(__dirname, 'src')}`,
+  "pages": `${path.resolve(__dirname, 'src/pages')}`
+}
+``` 
