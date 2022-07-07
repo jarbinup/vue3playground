@@ -2,16 +2,20 @@ import { createRouter, createWebHashHistory } from 'vue-router'
 
 // 1. 定义一些路由
 // 每个路由都需要映射到一个组件
-const routes = [
-  { path: '/', redirect: '/form', },
+export const routes = [
+  { 
+    path: '/', 
+    redirect: '/form',
+    name: 'home',
+  },
   { 
     path: '/form',
     name: 'form',
     component: () => import(/* webpackChunkName: "form" */ 'pages/form/index.vue'),
     meta: {
-      title: '表单功能'
+      title: '表单模块'
     }
-  },
+  }
 ]
 
 // 2. 创建路由实例并传递 `routes` 配置

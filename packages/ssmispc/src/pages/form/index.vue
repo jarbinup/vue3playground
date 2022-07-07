@@ -3,7 +3,7 @@
     ref="ruleFormRef"
     :model="ruleForm"
     :rules="rules"
-    label-width="120px"
+    label-width="80px"
     class="demo-ruleForm"
     :size="formSize"
   >
