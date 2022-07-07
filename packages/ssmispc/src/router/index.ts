@@ -1,8 +1,8 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-
+import type { RouteRecordRaw } from 'vue-router';
 // 1. 定义一些路由
 // 每个路由都需要映射到一个组件
-export const routes = [
+export const routes: Array<RouteRecordRaw>  = [
   { 
     path: '/', 
     redirect: '/form',

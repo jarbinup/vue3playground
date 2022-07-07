@@ -1,5 +1,8 @@
 # 更新记录
 
+## 220707
+- 提示 找不到模块“src/router/index”或其相应的类型声明 
+  添加 shims-vue.d.ts 文件来声明配置方式
 ## 220706
 - 删除多余文件 / 改为 monorepo / 使用 pnpm 进行包管理
 - pnpm init vite proj 进行项目初始化
