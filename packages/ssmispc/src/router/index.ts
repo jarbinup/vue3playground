@@ -15,6 +15,14 @@ export const routes: Array<RouteRecordRaw>  = [
     meta: {
       title: '表单模块'
     }
+  },
+  { 
+    path: '/challenges',
+    name: 'challenges',
+    component: () => import(/* webpackChunkName: "challenges" */ 'pages/challenges/index.vue'),
+    meta: {
+      title: 'challenges'
+    }
   }
 ]
 
