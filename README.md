@@ -1,5 +1,7 @@
 # 更新记录
-
+## 220710
+- https://github.com/vuejs/vue-router/issues/3379
+  useRouter must be called inside setup
 ## 220707
 - 提示 找不到模块“src/router/index”或其相应的类型声明 
   添加 shims-vue.d.ts 文件来声明配置方式

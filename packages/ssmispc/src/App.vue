@@ -1,14 +1,33 @@
 <script setup lang="ts">
+import { useDark, useToggle } from '@vueuse/core'
 import MenuNav from './components/MenuNav.vue';
+
+const isDark = useDark({
+  selector: 'html',
+  attribute: 'class',
+  valueDark: 'dark',
+  valueLight: 'light',
+})
+
+const toggleDark = useToggle(isDark)
+
+
 </script>
 
 <template>
   <div class="common-layout">
     <el-header id="header">
-      <div>
-        SSMISPC - 
-        <span id="jinrishici-sentence">正在加载今日诗词....</span>
+      <div class="flex-cloumn-center">
+        <p> SSMISPC- <span id="jinrishici-sentence">正在加载今日诗词....</span></p>
       </div>
+     <div class="flex-cloumn-center">
+        <el-button @click="toggleDark()">
+          <el-icon v-if="isDark"> <Moon /> </el-icon>
+          <el-icon v-else> <Sunny /> </el-icon>
+          <span class="ml-2">{{ isDark ? 'Dark' : 'Light' }}</span>
+        </el-button>
+      </div>
+      
     </el-header>
     <el-container>
       <el-aside style="width: 180px;">
@@ -39,8 +58,11 @@ import MenuNav from './components/MenuNav.vue';
   background-color: rgb(44, 62, 80);
   color: aliceblue;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+}
+.flex-cloumn-center {
+  display: flex;
   flex-direction: column;
-  text-align: left;
+  justify-content: center;
 }
 </style>

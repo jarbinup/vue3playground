@@ -8,7 +8,7 @@
     style="width: 180px; height: calc(100vh - 60px);"
   >
     <el-menu-item v-for="item in menuData" :index="item.index">
-      <router-link slot="title" :to="{ name: item.index }" class="menu-item__name">{{ item.key }}</router-link>
+      <p class="menu-item-text" @click="() => {goToPage(item.index)}">{{ item.key }}</p>
     </el-menu-item>
   </el-menu>
 </div>
@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { routes } from 'src/router/index'
 interface MenuItem {
   key: string;
@@ -30,6 +30,16 @@ interface routeType {
   };
   component?: string;
 }
+const useRouterCustom = () => {
+  const router = useRouter();
+  const goToPage = (key: string) => {
+    router.push({ name: key });
+  }
+  return {
+    goToPage
+  }
+}
+const { goToPage } = useRouterCustom()
 const menuData = computed(()=> {
   const result:MenuItem[] = [];
   routes.forEach((route:routeType) => {
@@ -52,18 +62,15 @@ const handleOpen = (key: string, keyPath: string[]) => {
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
+
 </script>
 
-<style scoped>
-.menu-item__name {
-  font-size: 14px;
-  font-weight: bold;
-  text-decoration-line: none;
+<style scoped lang="scss">
+.menu-item-text {
   width: 100%;
-  color: #2c3e50;
+  text-align: center;
 }
 .el-menu-item.is-active {
-  color: black;
-  background-color: #efefef;
+    background-color: var(--el-menu-hover-bg-color);
 }
 </style>
