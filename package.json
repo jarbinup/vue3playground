@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev:ssmispc": "vite packages/ssmispc",
-    "dev:ssmisapp": "vite packages/ssmisapp"
+    "dev:ssmisapp": "vite packages/ssmisapp",
+    "fix": "git pull origin master && git checkout -b hotfix/`date +%Y%m%d`"
   },
   "dependencies": {
     "vue": "^3.2.25",

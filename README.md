@@ -1,4 +1,8 @@
 # 更新记录
+## 220713
+- "fix": "git pull origin master && git checkout -b hotfix/`date +%Y%m%d`"
+  npm run fix 通过命令行自动新增修复分支
+
 ## 220710
 - https://github.com/vuejs/vue-router/issues/3379
   useRouter must be called inside setup
