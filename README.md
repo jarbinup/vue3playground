@@ -1,4 +1,8 @@
 # 更新记录
+
+## 220812
+- 新增 tailwindCSS 
+- pnpm i -D tailwindcss@latest postcss@latest autoprefixer@latest -w
 ## 220713
 - "fix": "git pull origin master && git checkout -b hotfix/`date +%Y%m%d`"
   npm run fix 通过命令行自动新增修复分支
