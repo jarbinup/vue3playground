@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { useDark, useToggle } from '@vueuse/core'
+import { useRouter,  } from 'vue-router';
+import { watch, ref } from 'vue';
 import MenuNav from './components/MenuNav.vue';
+
+
 
 const isDark = useDark({
   selector: 'html',
@@ -10,13 +14,22 @@ const isDark = useDark({
 })
 
 const toggleDark = useToggle(isDark)
+const isFullScreen = ref(false)
+const router = useRouter();
 
+watch(router.currentRoute, (val) => {
+  if(FULLSCREEPAGE.includes(val?.name)) {
+    isFullScreen.value = true;
+  } else {
+    isFullScreen.value = false;
+  }
+} )
 
 </script>
 
 <template>
   <div class="common-layout">
-    <el-header id="header">
+    <el-header id="header" v-if="!isFullScreen">
       <div class="flex-cloumn-center">
         <p> SSMISPC- <span id="jinrishici-sentence">正在加载今日诗词....</span></p>
       </div>
@@ -30,14 +43,14 @@ const toggleDark = useToggle(isDark)
       
     </el-header>
     <el-container>
-      <el-aside style="width: 180px;">
+      <el-aside style="width: 180px;" v-if="!isFullScreen">
         <MenuNav />
       </el-aside>
       <el-container>
         <el-main id="main">
           <router-view></router-view>
         </el-main>
-        <el-footer>SSMISPC</el-footer>
+        <el-footer v-if="!isFullScreen">SSMISPC</el-footer>
       </el-container>
     </el-container>
   </div>

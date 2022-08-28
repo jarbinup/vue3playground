@@ -39,6 +39,14 @@ export const routes: Array<RouteRecordRaw>  = [
     meta: {
       title: 'dataset'
     }
+  },
+  {
+    path: '/editor',
+    name: 'editor',
+    component: () => import(/* webpackChunkName: "editor" */ 'pages/editor/index.vue'),
+    meta: {
+      title: 'editor'
+    }
   }
 ]
 
